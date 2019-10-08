@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+​
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briefing</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+​
+<body class="stackedit">
+  <div class="stackedit__html"><h3 id="basis">Basis</h3>
+<p>Om de 60 seconden de fallback.json ophalen. 99% van de tijd is die leeg.<br>
+Hij kan echter 4 verschillende waarden bevatten</p>
+<pre><code>{}
+</code></pre>
+<h3 id="refresh">Refresh</h3>
+<ul>
+<li>Op deze waarde vullen we een key in. Elke key is geldig voor 1 refresh.</li>
+<li>Voor we de pagina herladen zullen we dus moeten kijken of de “key” al in localstorage zit.</li>
+<li>Zo niet, slaan we de key op in localstorage en refreshen we de pagina. Waarna het hele systeem opnieuw begint.</li>
+<li>De reden dat we die key opslaan in localstorage is zodat we niet in een refresh loop terecht komen</li>
+</ul>
+<pre><code>{
+  "refresh": 1568972585,
+}
+</code></pre>
+<h3 id="redirect">Redirect</h3>
+<ul>
+<li>Op deze waarde vullen we een URL in</li>
+<li>Voor we de redirect uitvoeren moeten we kijken of we nog niet op deze pagina zitten.</li>
+<li>Als de redirect ≠ huidige pagina, sturen we de bezoeker door</li>
+</ul>
+<pre><code>{
+  "redirect": "http://google.com",
+}
+</code></pre>
+<h3 id="popup--notification">Popup / Notification</h3>
+<ul>
+<li>Op deze waarde vullen we een HTML string in.</li>
+<li>Als deze waarde ingevuld is dan plaats je een DIV op de pagina met de inhoud van die waarde.</li>
+<li>Als de waarde verdwijnd in de JSON, verdwijnd de DIV ook.</li>
+</ul>
+<pre><code>{
+  "popup": "&lt;h1&gt;Test&lt;/h1&gt;",
+}
+</code></pre>
+</div>
+</body>
+​
+</html>
